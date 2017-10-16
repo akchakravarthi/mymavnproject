@@ -4,6 +4,16 @@
   <groupId>com.cheric1.kiran1</groupId>
   <artifactId>SAMPLEPROJECT1</artifactId>
   <packaging>war</packaging>
+  
+  <!-- Nexus
+  <distributionManagement>
+  <repository>
+    <id>REP-ID-2</id>
+    <url>http://localhost:8081/nexus/content/repositories/REP-ID-2</url>
+  </repository>
+</distributionManagement>
+-->
+
   <version>1.0-SNAPSHOT</version>
   <name>SAMPLEPROJECT1 Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -41,9 +51,32 @@
 		<username>kalyancat</username>
 		<password>kalyan</password>
 		<server>TomcatServer</server>
-		<path>/MyNewWebApp</path>
+		<path>/MyWebApp</path>
 	</configuration>
   </plugin>
+  <plugin>
+   <groupId>org.sonatype.plugins</groupId>
+   <artifactId>nexus-staging-maven-plugin</artifactId>
+   <version>1.5.1</version>
+   <executions>
+      <execution>
+         <id>default-deploy</id>
+         <phase>deploy</phase>
+         <goals>
+            <goal>deploy</goal>
+         </goals>
+      </execution>
+   </executions>
+   
+  <!-- Nexus 
+   <configuration>
+      <serverId>nexus</serverId>
+      <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+      <skipStaging>true</skipStaging>
+   </configuration>
+   -->
+   
+</plugin>
   </plugins> 
   </build>
 </project>
