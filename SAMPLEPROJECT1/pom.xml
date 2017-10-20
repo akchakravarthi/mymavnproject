@@ -54,6 +54,7 @@
 		<path>/MyWebApp</path>
 	</configuration>
   </plugin>
+  <!-- nexus
   <plugin>
    <groupId>org.sonatype.plugins</groupId>
    <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -67,7 +68,7 @@
          </goals>
       </execution>
    </executions>
-   
+   -->
   <!-- Nexus 
    <configuration>
       <serverId>nexus</serverId>
