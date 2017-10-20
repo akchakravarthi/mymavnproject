@@ -47,7 +47,7 @@
 	<artifactId>tomcat7-maven-plugin</artifactId>
 	<version>2.2</version>
 	<configuration>
-		<url>http://localhost:9090/manager/text</url>
+		<url>http://localhost:9090/manager</url>
 		<username>kalyancat</username>
 		<password>kalyan</password>
 		<server>TomcatServer</server>
