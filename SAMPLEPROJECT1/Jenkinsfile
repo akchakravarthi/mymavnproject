@@ -3,11 +3,11 @@ pipeline {
     
     stages{
 
-        /* stage('GIt Clone or Pull') {
+        stage('GIt Clone or Pull') {
             steps {
                 git 'https://github.com/akchakravarthi/mymavnproject.git'
             }    
-        } */   
+        }   
         
     
         stage ('Maven version check') {
