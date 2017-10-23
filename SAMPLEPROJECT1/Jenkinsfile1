@@ -1,0 +1,58 @@
+pipeline {
+    agent { label 'ubuntu-slave-2' }
+    
+    stages{
+
+        /* stage('GIt Clone or Pull') {
+            steps {
+                git 'https://github.com/akchakravarthi/mymavnproject.git'
+            }    
+        } */   
+        
+    
+        stage ('Maven version check') {
+            steps {
+                sh 'mvn -version'
+            }    
+        }
+    
+        stage('pom verify') {
+            steps {
+               // sh 'cd /home/kalyan/Jenkins Projects/SAMPLEPROJECT1'
+                sh 'mvn help:effective-pom'
+            }    
+        }
+        
+        /* stage('Create Project'){
+            steps {
+                sh 'mvn archetype:generate -DgroupId=com.cheric1.kiran1 -DartifactId=mymavenproj –DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false'
+            }
+        } */
+        
+        stage('Compilation') {
+            steps {
+                sh 'mvn compile'
+            }    
+        }
+        
+        
+
+        stage('Build') {
+            steps {
+               sh 'mvn clean package'
+            }    
+        }  
+
+        stage('Installs in local rep') {
+            steps {
+                sh 'mvn install'
+            }    
+        }   
+
+        stage('deploy to tomcat') {
+            steps {
+                sh 'mvn tomcat7:deploy'
+            }    
+        }
+    }
+}
