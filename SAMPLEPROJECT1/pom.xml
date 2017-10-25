@@ -35,6 +35,11 @@
     <finalName>SAMPLEPROJECT1</finalName>
   <plugins>
   <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-plugin</artifactId>
+        <version>1.9.5</version>
+  </plugin>	  
+  <plugin>
      <groupId>org.apache.maven.scm</groupId>
     <artifactId>maven-scm-provider-gitexe</artifactId>
     <version>1.9.5</version>
